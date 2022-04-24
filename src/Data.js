@@ -167,7 +167,7 @@ const CARDS = [
     cardName: "Platinum",
     bank: BANKS.AMEX,
     id: "amex-platinum",
-    annualFee: 150,
+    annualFee: 695,
     rewardType: REWARD_TYPES.MR,
     categories: {
       TRAVEL_GENERAL: 0.05,
