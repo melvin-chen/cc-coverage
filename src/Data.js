@@ -132,7 +132,7 @@ const CARDS = [
     bank: BANKS.AMEX,
     id: "amex-cash-magnet",
     annualFee: 0,
-    rewardType: REWARD_TYPES.MR,
+    rewardType: REWARD_TYPES.CASH_BACK,
     categories: {
       all: 0.015,
     },
@@ -142,7 +142,7 @@ const CARDS = [
     bank: BANKS.AMEX,
     id: "amex-green",
     annualFee: 150,
-    rewardType: REWARD_TYPES.CASH_BACK,
+    rewardType: REWARD_TYPES.MR,
     categories: {
       TRAVEL_GENERAL: 0.03,
       TRANSIT: 0.03,
