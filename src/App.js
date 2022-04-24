@@ -1,4 +1,4 @@
-import { Typography, Divider } from "antd";
+import { Typography } from "antd";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { CATEGORIES } from "./Data";
