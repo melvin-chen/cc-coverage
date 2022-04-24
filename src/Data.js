@@ -78,6 +78,7 @@ const CARDS = [
       TRAVEL_CHASE_FLIGHTS: 0.05,
       DINING: 0.03,
       DRUGSTORE: 0.03,
+      GAS: 0.05,
       all: 0.015,
     },
   },
