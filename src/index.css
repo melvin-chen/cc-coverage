@@ -17,3 +17,7 @@ code {
     background-color: #181818;
   }
 }
+
+.ant-popover {
+  padding: 0 20px !important;
+}

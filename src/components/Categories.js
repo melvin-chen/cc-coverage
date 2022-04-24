@@ -31,7 +31,11 @@ const CategoryGrid = styled.div`
   }
 `;
 
-const CategoryTitle = styled(Typography.Paragraph)``;
+const CategoryTitle = styled(Typography.Paragraph)`
+  &.ant-typography {
+    margin-bottom: 0;
+  }
+`;
 
 const CategoryAmount = styled(Typography.Paragraph)`
   width: 60px;
@@ -44,6 +48,9 @@ const CategoryAmount = styled(Typography.Paragraph)`
       ? `rgb( 0, 255, 0, ${reward / 0.06})`
       : `rgba( 255, 0, 0, ${0.7 - reward / 0.02})`};
 
+  &.ant-typography {
+    margin-bottom: 0;
+  }
   ${MEDIA_QUERIES.TABLET} {
     width: 100%;
   }
@@ -63,6 +70,9 @@ const CategorySource = styled(Typography.Paragraph)`
   border-radius: 40px;
   background-color: ${({ $associatedColor }) => $associatedColor};
   margin: 0 5px 5px 0;
+  &.ant-typography {
+    margin-bottom: 0;
+  }
 `;
 
 export const Categories = ({ selectedCategories }) => {

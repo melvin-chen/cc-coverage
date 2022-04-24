@@ -112,7 +112,7 @@ const CARDS = [
       TRAVEL_GENERAL_HOTELS: 0.03,
       DINING: 0.03,
       STREAMING: 0.03,
-      GROCERY_ONLINE: 0.03,
+      GROCERY_ONLINE: 0.01,
       all: 0.01,
     },
   },

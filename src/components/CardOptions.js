@@ -42,8 +42,16 @@ const CheckboxGroup = styled.div`
 const CustomCheckbox = styled(Checkbox)`
   margin: 5px 0;
 
+  &.ant-checkbox-wrapper + .ant-checkbox-wrapper {
+    margin: 5px 0;
+  }
+
   & .ant-checkbox {
-    margin-right: 3px;
+    margin-right: 5px;
+  }
+
+  & .ant-checkbox + span {
+    padding: 0;
   }
 `;
 
@@ -52,20 +60,38 @@ const CustomCashCard = ({ onCheckChange }) => {
   const [isSelected, setIsSelected] = useState(false);
 
   useEffect(() => {
-    onCheckChange(
-      { target: { checked: isSelected } },
-      {
-        cardName: "Citi Custom Cash",
-        bank: BANKS.CITI,
-        id: "citi-cc",
-        annualFee: 0,
-        rewardType: REWARD_TYPES.TYP,
-        categories: {
-          [chosenCCOption]: 0.05,
-          all: 0.01,
-        },
-      }
-    );
+    if (chosenCCOption === "TRAVEL_GENERAL") {
+      onCheckChange(
+        { target: { checked: isSelected } },
+        {
+          cardName: "Citi Custom Cash",
+          bank: BANKS.CITI,
+          id: "citi-cc",
+          annualFee: 0,
+          rewardType: REWARD_TYPES.TYP,
+          categories: {
+            TRAVEL_GENERAL_FLIGHTS: 0.05,
+            TRAVEL_GENERAL_HOTELS: 0.05,
+            all: 0.01,
+          },
+        }
+      );
+    } else {
+      onCheckChange(
+        { target: { checked: isSelected } },
+        {
+          cardName: "Citi Custom Cash",
+          bank: BANKS.CITI,
+          id: "citi-cc",
+          annualFee: 0,
+          rewardType: REWARD_TYPES.TYP,
+          categories: {
+            [chosenCCOption]: 0.05,
+            all: 0.01,
+          },
+        }
+      );
+    }
   }, [chosenCCOption, isSelected, onCheckChange]);
   return (
     <>

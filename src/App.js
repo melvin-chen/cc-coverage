@@ -1,12 +1,14 @@
-import { Typography } from "antd";
+import { Typography, Popover, Button } from "antd";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { CATEGORIES } from "./Data";
 import { CardOptions } from "./components/CardOptions";
 import { Categories } from "./components/Categories";
 import { AnnualFees } from "./components/AnnualFees";
+import { CustomCard } from "./components/CustomCard";
 import { Blurb } from "./components/Blurb";
 import { MEDIA_QUERIES } from "./Constants";
+import "antd/dist/antd.min.css";
 
 const AppContainer = styled.div`
   padding: 30px 20px;
@@ -18,9 +20,16 @@ const AppContainer = styled.div`
   }
 `;
 
+const CustomPopover = styled(Popover)`
+  margin: 20px 0;
+`;
+
 function App() {
   const [selectedCategories, setSelectedCategories] = useState(CATEGORIES);
   const [selectedCards, setSelectedCards] = useState(new Set());
+  const [customCardPopoverVisible, setCustomCardPopoverVisible] = useState(
+    false
+  );
 
   // When the selected cards change, update the categories
   useEffect(() => {
@@ -72,6 +81,22 @@ function App() {
         selectedCards={selectedCards}
         setSelectedCards={setSelectedCards}
       />
+      <CustomPopover
+        content={
+          <CustomCard
+            selectedCards={selectedCards}
+            setSelectedCards={setSelectedCards}
+            setCustomCardPopoverVisible={setCustomCardPopoverVisible}
+          />
+        }
+        trigger="click"
+        visible={customCardPopoverVisible}
+        onVisibleChange={setCustomCardPopoverVisible}
+      >
+        <Button type={customCardPopoverVisible ? "default" : "primary"}>
+          Add a custom card
+        </Button>
+      </CustomPopover>
       <Categories selectedCategories={selectedCategories} />
       <AnnualFees selectedCards={selectedCards} />
 
