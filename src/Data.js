@@ -154,7 +154,7 @@ const CARDS = [
     cardName: "Gold",
     bank: BANKS.AMEX,
     id: "amex-gold",
-    annualFee: 150,
+    annualFee: 250,
     rewardType: REWARD_TYPES.MR,
     categories: {
       TRAVEL_GENERAL: 0.03,
@@ -212,7 +212,7 @@ const CARDS = [
     cardName: "Quicksilver",
     bank: BANKS.CAPITAL_ONE,
     id: "capital-one-quicksilver",
-    annualFee: 150,
+    annualFee: 0,
     rewardType: REWARD_TYPES.CASH_BACK,
     categories: {
       all: 0.015,
