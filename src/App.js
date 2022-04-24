@@ -9,7 +9,7 @@ import { MEDIA_QUERIES } from "./Constants";
 
 const AppContainer = styled.div`
   padding: 30px 20px;
-  max-width: 1080px;
+  max-width: 1200px;
   margin: auto;
 
   ${MEDIA_QUERIES.DARK} {

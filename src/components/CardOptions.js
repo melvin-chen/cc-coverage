@@ -9,25 +9,31 @@ const CardCategories = styled.div`
   row-gap: 10px;
 
   ${MEDIA_QUERIES.TABLET} {
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 15px;
   }
   ${MEDIA_QUERIES.DESKTOP} {
-    grid-template-columns: repeat(5, 1fr);
-    column-gap: 10px;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 15px;
   }
 `;
 
 const CardContainer = styled.div`
   border: 1px solid #efefef;
   border-radius: 5px;
-  padding: 10px;
+  padding: 15px;
 `;
 
 const CardTitle = styled(Typography.Title)`
   margin: 0 0 10px;
+  font-size: 16px;
 `;
-
+const CardName = styled(Typography.Paragraph)`
+  display: inline;
+  ${MEDIA_QUERIES.DESKTOP} {
+    font-size: 14px;
+  }
+`;
 const CheckboxGroup = styled.div`
   display: flex;
   flex-direction: column;
@@ -35,6 +41,10 @@ const CheckboxGroup = styled.div`
 
 const CustomCheckbox = styled(Checkbox)`
   margin: 5px 0;
+
+  & .ant-checkbox {
+    margin-right: 3px;
+  }
 `;
 
 const CustomCashCard = ({ onCheckChange }) => {
@@ -75,9 +85,11 @@ const CustomCashCard = ({ onCheckChange }) => {
           });
         }}
       >
-        Citi Custom Cash
+        <CardName>Citi Custom Cash</CardName>
       </CustomCheckbox>
-      <label htmlFor="cc-select">Custom Cash category:</label>
+      <label htmlFor="cc-select">
+        <CardName>Custom Cash category:</CardName>
+      </label>
 
       <select
         name="cc-options"
@@ -130,7 +142,7 @@ export const CardOptions = ({ selectedCards, setSelectedCards }) => {
                     onChange={(e) => onCheckChange(e, card)}
                     key={card.id}
                   >
-                    {card.cardName}
+                    <CardName>{card.cardName}</CardName>
                   </CustomCheckbox>
                 ) : (
                   <CustomCashCard key={card.id} onCheckChange={onCheckChange} />

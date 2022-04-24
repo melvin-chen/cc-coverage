@@ -22,6 +22,7 @@ const CategoryGrid = styled.div`
   border-top: 1px solid #efefef;
   padding: 10px 0;
   justify-items: start;
+  min-height: 30px;
   background-color: ${({ backgroundColor }) => backgroundColor};
 
   ${MEDIA_QUERIES.TABLET} {

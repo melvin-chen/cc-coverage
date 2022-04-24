@@ -3,13 +3,14 @@ export const BANKS = {
   AMEX: "American Express",
   CAPITAL_ONE: "Captial One",
   CITI: "Citi",
+  DISCOVER: "Discover",
   OTHER: "Other",
 };
 
 export const REWARD_TYPES = {
   CASH_BACK: { name: "Cash Back", associatedColor: "#51ec5138" },
-  UR: { name: "Chase Ultimate Rewards", associatedColor: "#2e9eff36" },
-  MR: { name: "Amex Membership Rewards", associatedColor: "#ffbd1e3d" },
+  UR: { name: "Chase Ultimate Rewards Points", associatedColor: "#2e9eff36" },
+  MR: { name: "Amex Membership Rewards Points", associatedColor: "#ffbd1e3d" },
   COM: { name: "Capital One Miles", associatedColor: "#6800ff26" },
   TYP: { name: "Citi Thank You Points", associatedColor: "#c6c6c64f" },
 };
@@ -55,7 +56,7 @@ export const CATEGORIES = {
 
 const CARDS = [
   {
-    cardName: "CFU",
+    cardName: "Freedom Unlimited",
     bank: BANKS.CHASE,
     id: "chase-freedom-unlimited",
     annualFee: 0,
@@ -69,7 +70,7 @@ const CARDS = [
     },
   },
   {
-    cardName: "CSP",
+    cardName: "Sapphire Preferred",
     bank: BANKS.CHASE,
     id: "chase-sapphire-preferred",
     annualFee: 95,
@@ -85,7 +86,7 @@ const CARDS = [
     },
   },
   {
-    cardName: "CSR",
+    cardName: "Sapphire Reserve",
     bank: BANKS.CHASE,
     id: "chase-sapphire-reserve",
     rewardType: REWARD_TYPES.UR,
@@ -212,7 +213,7 @@ const CARDS = [
     bank: BANKS.CAPITAL_ONE,
     id: "capital-one-quicksilver",
     annualFee: 150,
-    rewardType: REWARD_TYPES.COM,
+    rewardType: REWARD_TYPES.CASH_BACK,
     categories: {
       all: 0.015,
     },
@@ -222,7 +223,7 @@ const CARDS = [
     bank: BANKS.CAPITAL_ONE,
     id: "capital-one-savor",
     annualFee: 95,
-    rewardType: REWARD_TYPES.COM,
+    rewardType: REWARD_TYPES.CASH_BACK,
     categories: {
       DINING: 0.04,
       STREAMING: 0.04,
@@ -235,7 +236,7 @@ const CARDS = [
     bank: BANKS.CAPITAL_ONE,
     id: "capital-one-so",
     annualFee: 0,
-    rewardType: REWARD_TYPES.COM,
+    rewardType: REWARD_TYPES.CASH_BACK,
     categories: {
       DINING: 0.03,
       STREAMING: 0.03,
@@ -300,6 +301,42 @@ const CARDS = [
       all: 0.02,
     },
   },
+  {
+    cardName: "US Bank Altitude Go",
+    bank: BANKS.OTHER,
+    id: "other-usb-altitude-go",
+    annualFee: 0,
+    rewardType: REWARD_TYPES.CASH_BACK,
+    categories: {
+      DINING: 0.04,
+      GROCERY: 0.02,
+      GAS: 0.02,
+      STREAMING: 0.02,
+      all: 0.01,
+    },
+  },
+  {
+    cardName: "Discover it Chrome",
+    bank: BANKS.DISCOVER,
+    id: "other-discover-chrome",
+    annualFee: 0,
+    rewardType: REWARD_TYPES.CASH_BACK,
+    categories: {
+      DINING: 0.02,
+      GAS: 0.02,
+      all: 0.01,
+    },
+  },
+  {
+    cardName: "Discover it Miles",
+    bank: BANKS.DISCOVER,
+    id: "other-discover-miles",
+    annualFee: 0,
+    rewardType: REWARD_TYPES.CASH_BACK,
+    categories: {
+      all: 0.015,
+    },
+  },
 ];
 
 const CHASE_CARDS = CARDS.filter((card) => card.bank === BANKS.CHASE);
@@ -308,6 +345,7 @@ const CAPITAL_ONE_CARDS = CARDS.filter(
   (card) => card.bank === BANKS.CAPITAL_ONE
 );
 const CITI_CARDS = CARDS.filter((card) => card.bank === BANKS.CITI);
+const DISCOVER_CARDS = CARDS.filter((card) => card.bank === BANKS.DISCOVER);
 const OTHER_CARDS = CARDS.filter((card) => card.bank === BANKS.OTHER);
 
 export const ALL_CARDS = {
@@ -315,5 +353,6 @@ export const ALL_CARDS = {
   amex: { displayName: "American Express", cards: AMEX_CARDS },
   capitalOne: { displayName: "Capital One", cards: CAPITAL_ONE_CARDS },
   citi: { displayName: "Citi", cards: CITI_CARDS },
+  discover: { displayName: "Discover", cards: DISCOVER_CARDS },
   other: { displayName: "Other", cards: OTHER_CARDS },
 };
