@@ -42,22 +42,20 @@ const CustomCashCard = ({ onCheckChange }) => {
   const [isSelected, setIsSelected] = useState(false);
 
   useEffect(() => {
-    if (isSelected) {
-      onCheckChange(
-        { target: { checked: true } },
-        {
-          cardName: "Citi Custom Cash",
-          bank: BANKS.CITI,
-          id: "citi-cc",
-          annualFee: 0,
-          rewardType: REWARD_TYPES.TYP,
-          categories: {
-            [chosenCCOption]: 0.05,
-            all: 0.01,
-          },
-        }
-      );
-    }
+    onCheckChange(
+      { target: { checked: isSelected } },
+      {
+        cardName: "Citi Custom Cash",
+        bank: BANKS.CITI,
+        id: "citi-cc",
+        annualFee: 0,
+        rewardType: REWARD_TYPES.TYP,
+        categories: {
+          [chosenCCOption]: 0.05,
+          all: 0.01,
+        },
+      }
+    );
   }, [chosenCCOption, isSelected, onCheckChange]);
   return (
     <>
