@@ -32,24 +32,36 @@ export const CATEGORIES = {
   },
   GAS: { displayName: "Gas", cardsInCategory: new Set() },
   TRANSIT: { displayName: "Transit", cardsInCategory: new Set() },
-  TRAVEL_GENERAL: {
-    displayName: "Travel (General)",
+  TRAVEL_GENERAL_FLIGHTS: {
+    displayName: "Travel - Flights (General)",
     cardsInCategory: new Set(),
   },
-  TRAVEL_CHASE_HOTELS: {
-    displayName: "Travel - Hotels (Chase)",
+  TRAVEL_GENERAL_HOTELS: {
+    displayName: "Travel - Hotels (General)",
     cardsInCategory: new Set(),
   },
   TRAVEL_CHASE_FLIGHTS: {
     displayName: "Travel - Flights (Chase)",
     cardsInCategory: new Set(),
   },
-  TRAVEL_CO_HOTELS: {
-    displayName: "Travel - Hotels (Capital One)",
+  TRAVEL_CHASE_HOTELS: {
+    displayName: "Travel - Hotels (Chase)",
     cardsInCategory: new Set(),
   },
   TRAVEL_CO_FLIGHTS: {
     displayName: "Travel - Flights (Capital One)",
+    cardsInCategory: new Set(),
+  },
+  TRAVEL_CO_HOTELS: {
+    displayName: "Travel - Hotels (Capital One)",
+    cardsInCategory: new Set(),
+  },
+  TRAVEL_AMEX_FLIGHTS: {
+    displayName: "Travel - Flights (Amex)",
+    cardsInCategory: new Set(),
+  },
+  TRAVEL_AMEX_HOTELS: {
+    displayName: "Travel - Hotels (Amex)",
     cardsInCategory: new Set(),
   },
 };
@@ -78,7 +90,8 @@ const CARDS = [
     categories: {
       TRAVEL_CHASE_HOTELS: 0.05,
       TRAVEL_CHASE_FLIGHTS: 0.05,
-      TRAVEL_GENERAL: 0.02,
+      TRAVEL_GENERAL_FLIGHTS: 0.02,
+      TRAVEL_GENERAL_HOTELS: 0.02,
       DINING: 0.03,
       STREAMING: 0.03,
       GROCERY_ONLINE: 0.03,
@@ -94,7 +107,8 @@ const CARDS = [
     categories: {
       TRAVEL_CHASE_HOTELS: 0.1,
       TRAVEL_CHASE_FLIGHTS: 0.05,
-      TRAVEL_GENERAL: 0.03,
+      TRAVEL_GENERAL_FLIGHTS: 0.03,
+      TRAVEL_GENERAL_HOTELS: 0.03,
       DINING: 0.03,
       STREAMING: 0.03,
       GROCERY_ONLINE: 0.03,
@@ -144,7 +158,8 @@ const CARDS = [
     annualFee: 150,
     rewardType: REWARD_TYPES.MR,
     categories: {
-      TRAVEL_GENERAL: 0.03,
+      TRAVEL_GENERAL_FLIGHTS: 0.03,
+      TRAVEL_GENERAL_HOTELS: 0.03,
       TRANSIT: 0.03,
       DINING: 0.03,
       all: 0.01,
@@ -157,7 +172,8 @@ const CARDS = [
     annualFee: 250,
     rewardType: REWARD_TYPES.MR,
     categories: {
-      TRAVEL_GENERAL: 0.03,
+      TRAVEL_GENERAL_FLIGHTS: 0.03,
+      TRAVEL_AMEX_FLIGHTS: 0.03,
       GROCERY: 0.04,
       DINING: 0.04,
       all: 0.01,
@@ -170,7 +186,9 @@ const CARDS = [
     annualFee: 695,
     rewardType: REWARD_TYPES.MR,
     categories: {
-      TRAVEL_GENERAL: 0.05,
+      TRAVEL_GENERAL_FLIGHTS: 0.05,
+      TRAVEL_AMEX_FLIGHTS: 0.05,
+      TRAVEL_AMEX_HOTELS: 0.05,
       all: 0.01,
     },
   },
@@ -252,7 +270,8 @@ const CARDS = [
     rewardType: REWARD_TYPES.TYP,
     categories: {
       DINING: 0.03,
-      TRAVEL_GENERAL: 0.03,
+      TRAVEL_GENERAL_FLIGHTS: 0.03,
+      TRAVEL_GENERAL_HOTELS: 0.03,
       GAS: 0.03,
       GROCERY: 0.03,
       all: 0.01,
@@ -286,7 +305,8 @@ const CARDS = [
     rewardType: REWARD_TYPES.CASH_BACK,
     categories: {
       GAS: 0.04,
-      TRAVEL_GENERAL: 0.03,
+      TRAVEL_GENERAL_FLIGHTS: 0.03,
+      TRAVEL_GENERAL_HOTELS: 0.03,
       DINING: 0.03,
       all: 0.01,
     },
