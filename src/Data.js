@@ -141,7 +141,7 @@ const CARDS = [
     bank: BANKS.AMEX,
     id: "amex-green",
     annualFee: 150,
-    rewardType: REWARD_TYPES.MR,
+    rewardType: REWARD_TYPES.CASH_BACK,
     categories: {
       TRAVEL_GENERAL: 0.03,
       TRANSIT: 0.03,
@@ -288,6 +288,16 @@ const CARDS = [
       TRAVEL_GENERAL: 0.03,
       DINING: 0.03,
       all: 0.01,
+    },
+  },
+  {
+    cardName: "Apple Card (with apple pay)",
+    bank: BANKS.OTHER,
+    id: "other-apple",
+    annualFee: 0,
+    rewardType: REWARD_TYPES.CASH_BACK,
+    categories: {
+      all: 0.02,
     },
   },
 ];
