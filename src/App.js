@@ -1,10 +1,11 @@
-import { Typography } from "antd";
+import { Typography, Divider } from "antd";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { CATEGORIES } from "./Data";
 import { CardOptions } from "./components/CardOptions";
 import { Categories } from "./components/Categories";
 import { AnnualFees } from "./components/AnnualFees";
+import { Blurb } from "./components/Blurb";
 import { MEDIA_QUERIES } from "./Constants";
 
 const AppContainer = styled.div`
@@ -73,6 +74,8 @@ function App() {
       />
       <Categories selectedCategories={selectedCategories} />
       <AnnualFees selectedCards={selectedCards} />
+
+      <Blurb />
     </AppContainer>
   );
 }
