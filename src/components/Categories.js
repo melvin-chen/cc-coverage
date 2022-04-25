@@ -13,9 +13,9 @@ const getPercentColor = (rewardRate) => {
     case 2:
       return "rgba(255, 205, 26, 0.8)";
     case 3:
-      return "rgba(147, 237, 34, 0.8)";
+      return "rgba(147, 237, 34, 0.7)";
     default:
-      return "rgba(54, 214, 28, 1)";
+      return "rgba(54, 214, 28, 0.7)";
   }
 };
 
