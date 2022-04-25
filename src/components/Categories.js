@@ -3,6 +3,22 @@ import { REWARD_TYPES } from "../Data";
 import styled from "styled-components";
 import { MEDIA_QUERIES } from "../Constants";
 
+const getPercentColor = (rewardRate) => {
+  const rewardRateInt = Math.ceil(rewardRate * 100);
+  switch (rewardRateInt) {
+    case 0:
+      return "rgba(255, 26, 26, 0.75)";
+    case 1:
+      return "rgba(255, 83, 83, 0.60)";
+    case 2:
+      return "rgba(255, 205, 26, 0.8)";
+    case 3:
+      return "rgba(147, 237, 34, 0.8)";
+    default:
+      return "rgba(54, 214, 28, 1)";
+  }
+};
+
 const RewardTypeContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -43,16 +59,16 @@ const CategoryAmount = styled(Typography.Paragraph)`
   align-self: center;
   padding: 2px 0;
   border-radius: 40px;
-  background-color: ${({ reward }) =>
-    reward >= 0.015
-      ? `rgb( 0, 255, 0, ${reward / 0.06})`
-      : `rgba( 255, 0, 0, ${0.7 - reward / 0.02})`};
+  background-color: ${({ reward }) => getPercentColor(reward)};
 
   &.ant-typography {
     margin-bottom: 0;
   }
   ${MEDIA_QUERIES.TABLET} {
     width: 100%;
+  }
+  @media (prefers-color-scheme: dark) {
+    color: black !important;
   }
 `;
 

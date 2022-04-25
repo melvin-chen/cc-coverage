@@ -95,7 +95,9 @@ const CustomCashCard = ({ onCheckChange }) => {
         }
       );
     }
-  }, [chosenCCOption, isSelected, onCheckChange]);
+    // eslint-disable-next-line
+  }, [chosenCCOption, isSelected]);
+
   return (
     <>
       <CustomCheckbox
