@@ -26,7 +26,10 @@ const CardContainer = styled.div`
 
 const CardTitle = styled(Typography.Title)`
   margin: 0 0 10px;
-  font-size: 16px;
+
+  &.ant-typography {
+    font-size: 16px;
+  }
 `;
 const CardName = styled(Typography.Paragraph)`
   display: inline;
