@@ -138,7 +138,7 @@ const CARDS = [
     rewardType: REWARD_TYPES.CASH_BACK,
     categories: {
       GROCERY: 0.03,
-      GAS: 0.03,
+      GAS: 0.02,
       all: 0.01,
     },
   },
