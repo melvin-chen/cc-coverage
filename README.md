@@ -2,6 +2,8 @@
 
 A webapp made to see gaps or overlaps in card category coverage. This is based off of [this reddit post](https://old.reddit.com/r/CreditCards/comments/u4dxyq/pokemon_team_type_coverage_chart_for_credit_card/)
 
+Preview the live site at https://cc-coverage.netlify.app !
+
 ## Available Scripts
 
 In the project directory, you can run:
