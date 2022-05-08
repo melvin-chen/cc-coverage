@@ -4,7 +4,7 @@ import React from "react";
 export const ForeignTransactionFees = ({ selectedCards }) => {
   const sortedCards = [...selectedCards].sort((a, b) => a.FTF > b.FTF);
   const noFTFCards = sortedCards.filter((card) => card.FTF === 0);
-  const FTFCards = sortedCards.filter((card) => card.FTF !==0);
+  const FTFCards = sortedCards.filter((card) => card.FTF !== 0);
   return (
     <>
       <Typography.Title level={2}>
@@ -19,7 +19,7 @@ export const ForeignTransactionFees = ({ selectedCards }) => {
           <Typography.Paragraph>
             {noFTFCards.map((card, index) => (
               <React.Fragment key={card.cardName}>
-                {index !==0 && ", "}
+                {index !== 0 && ", "}
                 {card.cardName}
               </React.Fragment>
             ))}
