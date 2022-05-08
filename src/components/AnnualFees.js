@@ -14,10 +14,10 @@ export const AnnualFees = ({ selectedCards }) => (
       )}{" "}
       (
       {[...selectedCards]
-        .filter((card) => card.annualFee != 0)
+        .filter((card) => card.annualFee !==0)
         .map((card, index) => (
           <React.Fragment key={card.cardName}>
-            {index != 0 && " + "}
+            {index !==0 && " + "}
             {card.cardName}: ${card.annualFee}
           </React.Fragment>
         ))}
