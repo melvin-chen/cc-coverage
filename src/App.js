@@ -98,7 +98,10 @@ function App() {
           Add a custom card
         </Button>
       </CustomPopover>
-      <Categories selectedCategories={selectedCategories} />
+      <Categories
+        selectedCategories={selectedCategories}
+        selectedCards={selectedCards}
+      />
       <AnnualFees selectedCards={selectedCards} />
       <ForeignTransactionFees selectedCards={selectedCards} />
 

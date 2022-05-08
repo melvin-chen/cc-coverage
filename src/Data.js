@@ -12,7 +12,13 @@ export const REWARD_TYPES = {
   UR: { name: "Chase Ultimate Rewards Points", associatedColor: "#2e9eff36" },
   MR: { name: "Amex Membership Rewards Points", associatedColor: "#ffbd1e3d" },
   COM: { name: "Capital One Miles", associatedColor: "#6800ff26" },
-  TYP: { name: "Citi Thank You Points", associatedColor: "#c6c6c64f" },
+  TYP: { name: "Citi Thank You Points", associatedColor: "#ff8fbe4f" },
+};
+
+export const TRAVEL_PORTALS = {
+  CHASE: "Chase",
+  CAPITAL_ONE: "Capital One",
+  AMEX: "American Express",
 };
 
 export const CATEGORIES = {
@@ -74,6 +80,7 @@ const CARDS = [
     annualFee: 0,
     rewardType: REWARD_TYPES.UR,
     FTF: 0.03,
+    travelPortal: TRAVEL_PORTALS.CHASE,
     categories: {
       TRAVEL_CHASE_HOTELS: 0.05,
       TRAVEL_CHASE_FLIGHTS: 0.05,
@@ -90,6 +97,7 @@ const CARDS = [
     annualFee: 95,
     rewardType: REWARD_TYPES.UR,
     FTF: 0,
+    travelPortal: TRAVEL_PORTALS.CHASE,
     categories: {
       TRAVEL_CHASE_HOTELS: 0.05,
       TRAVEL_CHASE_FLIGHTS: 0.05,
@@ -108,6 +116,7 @@ const CARDS = [
     rewardType: REWARD_TYPES.UR,
     annualFee: 550,
     FTF: 0,
+    travelPortal: TRAVEL_PORTALS.CHASE,
     categories: {
       TRAVEL_CHASE_HOTELS: 0.1,
       TRAVEL_CHASE_FLIGHTS: 0.05,
@@ -166,10 +175,13 @@ const CARDS = [
     id: "amex-green",
     annualFee: 150,
     FTF: 0,
+    travelPortal: TRAVEL_PORTALS.AMEX,
     rewardType: REWARD_TYPES.MR,
     categories: {
       TRAVEL_GENERAL_FLIGHTS: 0.03,
       TRAVEL_GENERAL_HOTELS: 0.03,
+      TRAVEL_AMEX_FLIGHTS: 0.03,
+      TRAVEL_AMEX_HOTELS: 0.03,
       TRANSIT: 0.03,
       DINING: 0.03,
       all: 0.01,
@@ -181,6 +193,7 @@ const CARDS = [
     id: "amex-gold",
     annualFee: 250,
     FTF: 0,
+    travelPortal: TRAVEL_PORTALS.AMEX,
     rewardType: REWARD_TYPES.MR,
     categories: {
       TRAVEL_GENERAL_FLIGHTS: 0.03,
@@ -197,6 +210,7 @@ const CARDS = [
     id: "amex-platinum",
     annualFee: 695,
     FTF: 0,
+    travelPortal: TRAVEL_PORTALS.AMEX,
     rewardType: REWARD_TYPES.MR,
     categories: {
       TRAVEL_GENERAL_FLIGHTS: 0.05,
@@ -212,6 +226,7 @@ const CARDS = [
     annualFee: 395,
     FTF: 0,
     rewardType: REWARD_TYPES.COM,
+    travelPortal: TRAVEL_PORTALS.CAPITAL_ONE,
     categories: {
       TRAVEL_CO_HOTELS: 0.1,
       TRAVEL_CO_FLIGHTS: 0.05,
@@ -224,6 +239,7 @@ const CARDS = [
     id: "capital-one-v",
     annualFee: 95,
     FTF: 0,
+    travelPortal: TRAVEL_PORTALS.CAPITAL_ONE,
     rewardType: REWARD_TYPES.COM,
     categories: {
       TRAVEL_CO_HOTELS: 0.05,
@@ -236,6 +252,7 @@ const CARDS = [
     id: "capital-one-vo",
     annualFee: 0,
     FTF: 0,
+    travelPortal: TRAVEL_PORTALS.CAPITAL_ONE,
     rewardType: REWARD_TYPES.COM,
     categories: {
       TRAVEL_CO_HOTELS: 0.05,

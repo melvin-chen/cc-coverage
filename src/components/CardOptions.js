@@ -71,6 +71,7 @@ const CustomCashCard = ({ onCheckChange }) => {
           bank: BANKS.CITI,
           id: "citi-cc",
           annualFee: 0,
+          FTF: 0.03,
           rewardType: REWARD_TYPES.TYP,
           categories: {
             TRAVEL_GENERAL_FLIGHTS: 0.05,
@@ -87,6 +88,7 @@ const CustomCashCard = ({ onCheckChange }) => {
           bank: BANKS.CITI,
           id: "citi-cc",
           annualFee: 0,
+          FTF: 0.03,
           rewardType: REWARD_TYPES.TYP,
           categories: {
             GROCERY: 0.05,
@@ -103,6 +105,7 @@ const CustomCashCard = ({ onCheckChange }) => {
           bank: BANKS.CITI,
           id: "citi-cc",
           annualFee: 0,
+          FTF: 0.03,
           rewardType: REWARD_TYPES.TYP,
           categories: {
             [chosenCCOption]: 0.05,
@@ -124,6 +127,7 @@ const CustomCashCard = ({ onCheckChange }) => {
             bank: BANKS.CITI,
             id: "citi-cc",
             annualFee: 0,
+            FTF: 0.03,
             rewardType: REWARD_TYPES.TYP,
             categories: {
               [chosenCCOption]: 0.05,

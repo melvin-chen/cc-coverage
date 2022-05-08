@@ -1,5 +1,5 @@
 import { Typography } from "antd";
-import { REWARD_TYPES } from "../Data";
+import { REWARD_TYPES, TRAVEL_PORTALS } from "../Data";
 import styled from "styled-components";
 import { MEDIA_QUERIES } from "../Constants";
 
@@ -91,7 +91,7 @@ const CategorySource = styled(Typography.Paragraph)`
   }
 `;
 
-export const Categories = ({ selectedCategories }) => {
+export const Categories = ({ selectedCategories, selectedCards }) => {
   const Best = ({ bestCards, bestRate }) =>
     bestCards && (
       <>
@@ -132,11 +132,17 @@ export const Categories = ({ selectedCategories }) => {
     return { bestCards, bestRate };
   };
 
+  const normalCategories = Object.keys(selectedCategories).slice(0, 9);
+  const chaseTravelCategories = ["TRAVEL_CHASE_FLIGHTS", "TRAVEL_CHASE_HOTELS"];
+  const amexTravelCategories = ["TRAVEL_AMEX_FLIGHTS", "TRAVEL_AMEX_HOTELS"];
+  const capitalOneTravelCategories = ["TRAVEL_CO_FLIGHTS", "TRAVEL_CO_HOTELS"];
+
   return (
     <>
       <Typography.Title level={2}>Covered Categories</Typography.Title>
+      {/* Normal non-portal categories */}
       <div>
-        {Object.keys(selectedCategories).map((category) => (
+        {normalCategories.map((category) => (
           <CategoryGrid key={selectedCategories[category].displayName}>
             <CategoryTitle>
               {selectedCategories[category].displayName}
@@ -149,9 +155,62 @@ export const Categories = ({ selectedCategories }) => {
             />
           </CategoryGrid>
         ))}
+        {/* Travel categories through Chase */}
+        {[...selectedCards].some(
+          (card) => card.travelPortal === TRAVEL_PORTALS.CHASE
+        ) &&
+          chaseTravelCategories.map((category) => (
+            <CategoryGrid key={selectedCategories[category].displayName}>
+              <CategoryTitle>
+                {selectedCategories[category].displayName}
+              </CategoryTitle>
+              <Best
+                {...getBest(
+                  [...selectedCategories[category].cardsInCategory],
+                  category
+                )}
+              />
+            </CategoryGrid>
+          ))}
+        {/* Travel categories through American Express */}
+        {[...selectedCards].some(
+          (card) => card.travelPortal === TRAVEL_PORTALS.AMEX
+        ) &&
+          amexTravelCategories.map((category) => (
+            <CategoryGrid key={selectedCategories[category].displayName}>
+              <CategoryTitle>
+                {selectedCategories[category].displayName}
+              </CategoryTitle>
+              <Best
+                {...getBest(
+                  [...selectedCategories[category].cardsInCategory],
+                  category
+                )}
+              />
+            </CategoryGrid>
+          ))}
+        {/* Travel categories through Capital One */}
+        {[...selectedCards].some(
+          (card) => card.travelPortal === TRAVEL_PORTALS.CAPITAL_ONE
+        ) &&
+          capitalOneTravelCategories.map((category) => (
+            <CategoryGrid key={selectedCategories[category].displayName}>
+              <CategoryTitle>
+                {selectedCategories[category].displayName}
+              </CategoryTitle>
+              <Best
+                {...getBest(
+                  [...selectedCategories[category].cardsInCategory],
+                  category
+                )}
+              />
+            </CategoryGrid>
+          ))}
       </div>
 
-      <Typography.Title level={3}>Color Key</Typography.Title>
+      <Typography.Title level={3} style={{ marginTop: "1.2em" }}>
+        Color Key
+      </Typography.Title>
       <RewardTypeContainer>
         {Object.keys(REWARD_TYPES).map((type) => (
           <RewardType
