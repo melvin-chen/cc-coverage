@@ -7,6 +7,7 @@ import { Categories } from "./components/Categories";
 import { AnnualFees } from "./components/AnnualFees";
 import { CustomCard } from "./components/CustomCard";
 import { Blurb } from "./components/Blurb";
+import { ForeignTransactionFees } from "./components/ForeignTransactionFees";
 import { MEDIA_QUERIES } from "./Constants";
 import "antd/dist/antd.min.css";
 
@@ -99,6 +100,7 @@ function App() {
       </CustomPopover>
       <Categories selectedCategories={selectedCategories} />
       <AnnualFees selectedCards={selectedCards} />
+      <ForeignTransactionFees selectedCards={selectedCards} />
 
       <Blurb />
     </AppContainer>

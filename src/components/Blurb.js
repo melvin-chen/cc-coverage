@@ -25,11 +25,13 @@ export const Blurb = () => (
       </BlurbText>
     </BlurbContainer>
     <BlurbContainer>
+      <Typography.Title level={2} style={{ marginTop: "1.2em" }}>
+        Welcome to the credit card coverage visualizer.
+      </Typography.Title>
       <BlurbText>
-        Welcome to the credit card coverage visualizer. This web app lets you
-        see gaps in your credit card rewards so you can make the most out of
-        your spending. Short disclaimer, there are a lot of good cards out there
-        that I did not include in this list:
+        This web app lets you see gaps in your credit card rewards so you can
+        make the most out of your spending. Short disclaimer, there are a lot of
+        good cards out there that I did not include in this list:
       </BlurbText>
       <BlurbText>
         (1) Cards that have quarterly rotating categories (e.g., CFF, Discover
@@ -37,13 +39,7 @@ export const Blurb = () => (
         what this tool is calculating for.
       </BlurbText>
       <BlurbText>
-        (2) Cards that have multiple selections for categories (e.g., BoA
-        Customized Cash, Venmo, US Bank Cash+, etc.). Those are just a little
-        more complicated to implement, PRs welcome if you would like to take a
-        stab.
-      </BlurbText>
-      <BlurbText>
-        (3) Airline or Hotel branded cards. Some of them are good, some not as
+        (2) Airline or Hotel branded cards. Some of them are good, some not as
         much, but just a lot to implement for. They also are not exactly
         redeemable as 1 cent per point. Again, PRs welcome if you would really
         like to include them.

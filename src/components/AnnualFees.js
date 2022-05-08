@@ -2,7 +2,9 @@ import { Typography } from "antd";
 
 export const AnnualFees = ({ selectedCards }) => (
   <>
-    <Typography.Title level={2}>Total Annual Fees</Typography.Title>
+    <Typography.Title level={2} style={{ marginTop: "1.2em" }}>
+      Total Annual Fees
+    </Typography.Title>
     <Typography.Paragraph>
       $
       {[...selectedCards].reduce(

@@ -73,6 +73,7 @@ const CARDS = [
     id: "chase-freedom-unlimited",
     annualFee: 0,
     rewardType: REWARD_TYPES.UR,
+    FTF: 0.03,
     categories: {
       TRAVEL_CHASE_HOTELS: 0.05,
       TRAVEL_CHASE_FLIGHTS: 0.05,
@@ -88,6 +89,7 @@ const CARDS = [
     id: "chase-sapphire-preferred",
     annualFee: 95,
     rewardType: REWARD_TYPES.UR,
+    FTF: 0,
     categories: {
       TRAVEL_CHASE_HOTELS: 0.05,
       TRAVEL_CHASE_FLIGHTS: 0.05,
@@ -105,6 +107,7 @@ const CARDS = [
     id: "chase-sapphire-reserve",
     rewardType: REWARD_TYPES.UR,
     annualFee: 550,
+    FTF: 0,
     categories: {
       TRAVEL_CHASE_HOTELS: 0.1,
       TRAVEL_CHASE_FLIGHTS: 0.05,
@@ -122,6 +125,7 @@ const CARDS = [
     id: "amex-blue-cash-preferred",
     rewardType: REWARD_TYPES.CASH_BACK,
     annualFee: 95,
+    FTF: 0.027,
     categories: {
       GROCERY: 0.06,
       GROCERY_ONLINE: 0.06,
@@ -136,6 +140,7 @@ const CARDS = [
     bank: BANKS.AMEX,
     id: "amex-blue-cash-everyday",
     annualFee: 0,
+    FTF: 0.027,
     rewardType: REWARD_TYPES.CASH_BACK,
     categories: {
       GROCERY: 0.03,
@@ -149,6 +154,7 @@ const CARDS = [
     bank: BANKS.AMEX,
     id: "amex-cash-magnet",
     annualFee: 0,
+    FTF: 0.027,
     rewardType: REWARD_TYPES.CASH_BACK,
     categories: {
       all: 0.015,
@@ -159,6 +165,7 @@ const CARDS = [
     bank: BANKS.AMEX,
     id: "amex-green",
     annualFee: 150,
+    FTF: 0,
     rewardType: REWARD_TYPES.MR,
     categories: {
       TRAVEL_GENERAL_FLIGHTS: 0.03,
@@ -173,6 +180,7 @@ const CARDS = [
     bank: BANKS.AMEX,
     id: "amex-gold",
     annualFee: 250,
+    FTF: 0,
     rewardType: REWARD_TYPES.MR,
     categories: {
       TRAVEL_GENERAL_FLIGHTS: 0.03,
@@ -188,6 +196,7 @@ const CARDS = [
     bank: BANKS.AMEX,
     id: "amex-platinum",
     annualFee: 695,
+    FTF: 0,
     rewardType: REWARD_TYPES.MR,
     categories: {
       TRAVEL_GENERAL_FLIGHTS: 0.05,
@@ -201,6 +210,7 @@ const CARDS = [
     bank: BANKS.CAPITAL_ONE,
     id: "capital-one-vx",
     annualFee: 395,
+    FTF: 0,
     rewardType: REWARD_TYPES.COM,
     categories: {
       TRAVEL_CO_HOTELS: 0.1,
@@ -213,6 +223,7 @@ const CARDS = [
     bank: BANKS.CAPITAL_ONE,
     id: "capital-one-v",
     annualFee: 95,
+    FTF: 0,
     rewardType: REWARD_TYPES.COM,
     categories: {
       TRAVEL_CO_HOTELS: 0.05,
@@ -224,6 +235,7 @@ const CARDS = [
     bank: BANKS.CAPITAL_ONE,
     id: "capital-one-vo",
     annualFee: 0,
+    FTF: 0,
     rewardType: REWARD_TYPES.COM,
     categories: {
       TRAVEL_CO_HOTELS: 0.05,
@@ -235,6 +247,7 @@ const CARDS = [
     bank: BANKS.CAPITAL_ONE,
     id: "capital-one-quicksilver",
     annualFee: 0,
+    FTF: 0,
     rewardType: REWARD_TYPES.CASH_BACK,
     categories: {
       all: 0.015,
@@ -246,6 +259,7 @@ const CARDS = [
     id: "capital-one-savor",
     annualFee: 95,
     rewardType: REWARD_TYPES.CASH_BACK,
+    FTF: 0,
     categories: {
       DINING: 0.04,
       STREAMING: 0.04,
@@ -260,6 +274,7 @@ const CARDS = [
     id: "capital-one-so",
     annualFee: 0,
     rewardType: REWARD_TYPES.CASH_BACK,
+    FTF: 0,
     categories: {
       DINING: 0.03,
       STREAMING: 0.03,
@@ -274,6 +289,7 @@ const CARDS = [
     id: "citi-premier",
     annualFee: 95,
     rewardType: REWARD_TYPES.TYP,
+    FTF: 0,
     categories: {
       DINING: 0.03,
       TRAVEL_GENERAL_FLIGHTS: 0.03,
@@ -290,6 +306,7 @@ const CARDS = [
     id: "citi-dc",
     annualFee: 0,
     rewardType: REWARD_TYPES.TYP,
+    FTF: 0.03,
     categories: {
       all: 0.02,
     },
@@ -299,6 +316,7 @@ const CARDS = [
     bank: BANKS.CITI,
     id: "citi-cc",
     annualFee: 0,
+    FTF: 0.03,
     rewardType: REWARD_TYPES.TYP,
     categories: {
       all: 0.01,
@@ -310,6 +328,7 @@ const CARDS = [
     id: "citi-costco",
     annualFee: 60,
     rewardType: REWARD_TYPES.CASH_BACK,
+    FTF: 0,
     categories: {
       GAS: 0.04,
       TRAVEL_GENERAL_FLIGHTS: 0.03,
@@ -324,8 +343,15 @@ const CARDS = [
     id: "other-apple",
     annualFee: 0,
     rewardType: REWARD_TYPES.CASH_BACK,
+    FTF: 0,
     categories: {
-      all: 0.02,
+      DINING: 0.02,
+      GROCERY: 0.02,
+      GROCERY_ONLINE: 0.02,
+      DRUGSTORE: 0.02,
+      GAS: 0.02,
+      TRANSIT: 0.02,
+      all: 0.01,
     },
   },
   {
@@ -334,6 +360,7 @@ const CARDS = [
     id: "other-usb-altitude-go",
     annualFee: 0,
     rewardType: REWARD_TYPES.CASH_BACK,
+    FTF: 0,
     categories: {
       DINING: 0.04,
       GROCERY: 0.02,
@@ -348,6 +375,7 @@ const CARDS = [
     bank: BANKS.DISCOVER,
     id: "other-discover-chrome",
     annualFee: 0,
+    FTF: 0,
     rewardType: REWARD_TYPES.CASH_BACK,
     categories: {
       DINING: 0.02,
@@ -360,6 +388,7 @@ const CARDS = [
     bank: BANKS.DISCOVER,
     id: "other-discover-miles",
     annualFee: 0,
+    FTF: 0,
     rewardType: REWARD_TYPES.CASH_BACK,
     categories: {
       all: 0.015,
