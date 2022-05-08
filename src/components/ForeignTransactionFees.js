@@ -1,4 +1,5 @@
 import { Typography } from "antd";
+import React from "react";
 
 export const ForeignTransactionFees = ({ selectedCards }) => {
   const sortedCards = [...selectedCards].sort((a, b) => a.FTF > b.FTF);
@@ -14,17 +15,22 @@ export const ForeignTransactionFees = ({ selectedCards }) => {
       )}
       {noFTFCards.length > 0 && (
         <>
-          <Typography.Title level={3}>No FTF</Typography.Title>
-          {noFTFCards.map((card) => (
-            <Typography.Paragraph>{card.cardName}</Typography.Paragraph>
-          ))}
+          <Typography.Title level={3}>No FTF</Typography.Title>{" "}
+          <Typography.Paragraph>
+            {noFTFCards.map((card, index) => (
+              <React.Fragment key={card.cardName}>
+                {index != 0 && ", "}
+                {card.cardName}
+              </React.Fragment>
+            ))}
+          </Typography.Paragraph>
         </>
       )}
       {FTFCards.length > 0 && (
         <>
           <Typography.Title level={3}>With FTF</Typography.Title>
           {FTFCards.map((card) => (
-            <Typography.Paragraph>
+            <Typography.Paragraph key={card.cardName}>
               {card.FTF * 100}% with {card.cardName}
             </Typography.Paragraph>
           ))}
