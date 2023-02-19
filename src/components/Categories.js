@@ -136,6 +136,10 @@ export const Categories = ({ selectedCategories, selectedCards }) => {
   const chaseTravelCategories = ["TRAVEL_CHASE_FLIGHTS", "TRAVEL_CHASE_HOTELS"];
   const amexTravelCategories = ["TRAVEL_AMEX_FLIGHTS", "TRAVEL_AMEX_HOTELS"];
   const capitalOneTravelCategories = ["TRAVEL_CO_FLIGHTS", "TRAVEL_CO_HOTELS"];
+  const usBankTravelCategories = [
+    "TRAVEL_US_BANK_FLIGHTS",
+    "TRAVEL_US_BANK_HOTELS",
+  ];
 
   return (
     <>
@@ -194,6 +198,23 @@ export const Categories = ({ selectedCategories, selectedCards }) => {
           (card) => card.travelPortal === TRAVEL_PORTALS.CAPITAL_ONE
         ) &&
           capitalOneTravelCategories.map((category) => (
+            <CategoryGrid key={selectedCategories[category].displayName}>
+              <CategoryTitle>
+                {selectedCategories[category].displayName}
+              </CategoryTitle>
+              <Best
+                {...getBest(
+                  [...selectedCategories[category].cardsInCategory],
+                  category
+                )}
+              />
+            </CategoryGrid>
+          ))}
+        {/* Travel categories through US Bank */}
+        {[...selectedCards].some(
+          (card) => card.travelPortal === TRAVEL_PORTALS.US_BANK
+        ) &&
+          usBankTravelCategories.map((category) => (
             <CategoryGrid key={selectedCategories[category].displayName}>
               <CategoryTitle>
                 {selectedCategories[category].displayName}

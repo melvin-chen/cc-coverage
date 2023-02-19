@@ -3,7 +3,7 @@ export const BANKS = {
   AMEX: "American Express",
   CAPITAL_ONE: "Captial One",
   CITI: "Citi",
-  DISCOVER: "Discover",
+  US_BANK: "US Bank",
   OTHER: "Other",
 };
 
@@ -19,6 +19,7 @@ export const TRAVEL_PORTALS = {
   CHASE: "Chase",
   CAPITAL_ONE: "Capital One",
   AMEX: "American Express",
+  US_BANK: "US Bank",
 };
 
 export const CATEGORIES = {
@@ -70,6 +71,14 @@ export const CATEGORIES = {
     displayName: "Travel - Hotels (Amex)",
     cardsInCategory: new Set(),
   },
+  TRAVEL_US_BANK_FLIGHTS: {
+    displayName: "Travel - Flights (US Bank)",
+    cardsInCategory: new Set(),
+  },
+  TRAVEL_US_BANK_HOTELS: {
+    displayName: "Travel - Hotels (US Bank)",
+    cardsInCategory: new Set(),
+  },
 };
 
 const CARDS = [
@@ -86,7 +95,6 @@ const CARDS = [
       TRAVEL_CHASE_FLIGHTS: 0.05,
       DINING: 0.03,
       DRUGSTORE: 0.03,
-      GAS: 0.05,
       all: 0.015,
     },
   },
@@ -106,6 +114,7 @@ const CARDS = [
       DINING: 0.03,
       STREAMING: 0.03,
       GROCERY_ONLINE: 0.03,
+      TRANSIT: 0.02,
       all: 0.01,
     },
   },
@@ -154,7 +163,7 @@ const CARDS = [
     categories: {
       GROCERY: 0.03,
       GROCERY_ONLINE: 0.03,
-      GAS: 0.02,
+      GAS: 0.03,
       all: 0.01,
     },
   },
@@ -314,6 +323,7 @@ const CARDS = [
       GAS: 0.03,
       GROCERY: 0.03,
       GROCERY_ONLINE: 0.03,
+      TRANSIT: 0.03,
       all: 0.01,
     },
   },
@@ -362,21 +372,47 @@ const CARDS = [
     rewardType: REWARD_TYPES.CASH_BACK,
     FTF: 0,
     categories: {
-      DINING: 0.02,
-      GROCERY: 0.02,
-      GROCERY_ONLINE: 0.02,
-      DRUGSTORE: 0.02,
-      GAS: 0.02,
-      TRANSIT: 0.02,
+      all: 0.02,
+    },
+  },
+  {
+    cardName: "Wells Fargo Bilt",
+    bank: BANKS.OTHER,
+    id: "other-wf-bilt",
+    annualFee: 0,
+    rewardType: REWARD_TYPES.UR,
+    FTF: 0,
+    categories: {
+      DINING: 0.03,
+      TRAVEL_GENERAL_FLIGHTS: 0.02,
+      TRAVEL_GENERAL_HOTELS: 0.02,
       all: 0.01,
     },
   },
   {
-    cardName: "US Bank Altitude Go",
+    cardName: "Wells Fargo Autograph",
     bank: BANKS.OTHER,
-    id: "other-usb-altitude-go",
+    id: "other-wf-autograph",
     annualFee: 0,
     rewardType: REWARD_TYPES.CASH_BACK,
+    FTF: 0,
+    categories: {
+      DINING: 0.03,
+      STREAMING: 0.03,
+      GAS: 0.03,
+      TRANSIT: 0.03,
+      TRAVEL_GENERAL_FLIGHTS: 0.03,
+      TRAVEL_GENERAL_HOTELS: 0.03,
+      all: 0.01,
+    },
+  },
+  {
+    cardName: "Altitude Go",
+    bank: BANKS.US_BANK,
+    id: "usb-altitude-go",
+    annualFee: 0,
+    rewardType: REWARD_TYPES.CASH_BACK,
+    travelPortal: TRAVEL_PORTALS.US_BANK,
     FTF: 0,
     categories: {
       DINING: 0.04,
@@ -384,31 +420,43 @@ const CARDS = [
       GROCERY_ONLINE: 0.02,
       GAS: 0.02,
       STREAMING: 0.02,
+      TRAVEL_US_BANK_FLIGHTS: 0.05,
+      TRAVEL_US_BANK_HOTELS: 0.05,
       all: 0.01,
     },
   },
   {
-    cardName: "Discover it Chrome",
-    bank: BANKS.DISCOVER,
-    id: "other-discover-chrome",
-    annualFee: 0,
-    FTF: 0,
+    cardName: "Altitude Connect",
+    bank: BANKS.US_BANK,
+    id: "usb-altitude-connect",
+    annualFee: 95,
     rewardType: REWARD_TYPES.CASH_BACK,
+    travelPortal: TRAVEL_PORTALS.US_BANK,
+    FTF: 0,
     categories: {
       DINING: 0.02,
-      GAS: 0.02,
+      GROCERY: 0.02,
+      GROCERY_ONLINE: 0.02,
+      GAS: 0.04,
+      STREAMING: 0.02,
+      TRAVEL_GENERAL_FLIGHTS: 0.04,
+      TRAVEL_GENERAL_HOTELS: 0.04,
+      TRAVEL_US_BANK_FLIGHTS: 0.05,
+      TRAVEL_US_BANK_HOTELS: 0.05,
       all: 0.01,
     },
   },
   {
-    cardName: "Discover it Miles",
-    bank: BANKS.DISCOVER,
-    id: "other-discover-miles",
-    annualFee: 0,
-    FTF: 0,
+    cardName: "Altitude Reserve (with mobile wallet)",
+    bank: BANKS.US_BANK,
+    id: "usb-altitude-reserve",
+    annualFee: 400,
     rewardType: REWARD_TYPES.CASH_BACK,
+    travelPortal: TRAVEL_PORTALS.US_BANK,
+    FTF: 0,
     categories: {
-      all: 0.015,
+      TRAVEL_US_BANK_HOTELS: 0.05,
+      all: 0.03,
     },
   },
 ];
@@ -419,7 +467,7 @@ const CAPITAL_ONE_CARDS = CARDS.filter(
   (card) => card.bank === BANKS.CAPITAL_ONE
 );
 const CITI_CARDS = CARDS.filter((card) => card.bank === BANKS.CITI);
-const DISCOVER_CARDS = CARDS.filter((card) => card.bank === BANKS.DISCOVER);
+const US_BANK_CARDS = CARDS.filter((card) => card.bank === BANKS.US_BANK);
 const OTHER_CARDS = CARDS.filter((card) => card.bank === BANKS.OTHER);
 
 export const ALL_CARDS = {
@@ -427,6 +475,6 @@ export const ALL_CARDS = {
   amex: { displayName: "American Express", cards: AMEX_CARDS },
   capitalOne: { displayName: "Capital One", cards: CAPITAL_ONE_CARDS },
   citi: { displayName: "Citi", cards: CITI_CARDS },
-  discover: { displayName: "Discover", cards: DISCOVER_CARDS },
+  usBank: { displayName: "US Bank", cards: US_BANK_CARDS },
   other: { displayName: "Other", cards: OTHER_CARDS },
 };

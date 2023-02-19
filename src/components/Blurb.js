@@ -16,10 +16,7 @@ export const Blurb = () => (
     <BlurbContainer>
       <BlurbText>Disclaimers:</BlurbText>
       <BlurbText>
-        (1) CFU only has 5% gas on the first year, afterwards it is 1%
-      </BlurbText>
-      <BlurbText>
-        (2) Some cards have caps on amounts you can spend in category (e.g.,
+        (1) Some cards have caps on amounts you can spend in category (e.g.,
         Citi Custom Cash, Amex BCP, etc.). Keep those in mind when you choose a
         card.
       </BlurbText>
