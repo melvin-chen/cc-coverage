@@ -95,7 +95,7 @@ export const Categories = ({ selectedCategories, selectedCards }) => {
   const Best = ({ bestCards, bestRate }) =>
     bestCards && (
       <>
-        <CategoryAmount reward={bestRate}>{bestRate * 100}%</CategoryAmount>
+        <CategoryAmount reward={bestRate}>{Math.round(bestRate * 100 * 10) / 10}%</CategoryAmount>
         {bestCards.length > 0 && (
           <CategorySources>
             {bestCards.map((card) => (
