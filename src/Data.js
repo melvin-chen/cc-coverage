@@ -440,7 +440,7 @@ const CARDS = [
       DINING: 0.04,
       GROCERY: 0.02,
       GROCERY_ONLINE: 0.02,
-      GAS: 0.02,N
+      GAS: 0.02,
       STREAMING: 0.02,
       TRAVEL_US_BANK_FLIGHTS: 0.05,
       TRAVEL_US_BANK_HOTELS: 0.05,
