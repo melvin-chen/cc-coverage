@@ -414,7 +414,7 @@ const CARDS = [
       TRANSIT: 0.03,
       TRAVEL_GENERAL_FLIGHTS: 0.03,
       TRAVEL_GENERAL_HOTELS: 0.03,
-      all: 0.01,N
+      all: 0.01,
     },
   },
   {
