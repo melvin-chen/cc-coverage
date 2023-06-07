@@ -107,15 +107,15 @@ const CARDS = [
     FTF: 0,
     travelPortal: TRAVEL_PORTALS.CHASE,
     categories: {
-      TRAVEL_CHASE_HOTELS: 0.05,
-      TRAVEL_CHASE_FLIGHTS: 0.05,
-      TRAVEL_GENERAL_FLIGHTS: 0.02,
-      TRAVEL_GENERAL_HOTELS: 0.02,
-      DINING: 0.03,
-      STREAMING: 0.03,
-      GROCERY_ONLINE: 0.03,
-      TRANSIT: 0.02,
-      all: 0.01,
+      TRAVEL_CHASE_HOTELS: 0.051,
+      TRAVEL_CHASE_FLIGHTS: 0.051,
+      TRAVEL_GENERAL_FLIGHTS: 0.021,
+      TRAVEL_GENERAL_HOTELS: 0.021,
+      DINING: 0.031,
+      STREAMING: 0.031,
+      GROCERY_ONLINE: 0.031,
+      TRANSIT: 0.021,
+      all: 0.011,
     },
   },
   {
@@ -226,6 +226,17 @@ const CARDS = [
       TRAVEL_AMEX_FLIGHTS: 0.05,
       TRAVEL_AMEX_HOTELS: 0.05,
       all: 0.01,
+    },
+  },
+  {
+    cardName: "Blue Business Plus",
+    bank: BANKS.AMEX,
+    id: "amex-bbp",
+    annualFee: 0,
+    FTF: 0.027,
+    rewardType: REWARD_TYPES.MR,
+    categories: {
+      all: 0.02,
     },
   },
   {
@@ -403,7 +414,18 @@ const CARDS = [
       TRANSIT: 0.03,
       TRAVEL_GENERAL_FLIGHTS: 0.03,
       TRAVEL_GENERAL_HOTELS: 0.03,
-      all: 0.01,
+      all: 0.01,N
+    },
+  },
+  {
+    cardName: "Wells Fargo Active Cash",
+    bank: BANKS.OTHER,
+    id: "other-wf-ac",
+    annualFee: 0,
+    rewardType: REWARD_TYPES.CASH_BACK,
+    FTF: 0.03,
+    categories: {
+      all: 0.02,
     },
   },
   {
@@ -418,7 +440,7 @@ const CARDS = [
       DINING: 0.04,
       GROCERY: 0.02,
       GROCERY_ONLINE: 0.02,
-      GAS: 0.02,
+      GAS: 0.02,N
       STREAMING: 0.02,
       TRAVEL_US_BANK_FLIGHTS: 0.05,
       TRAVEL_US_BANK_HOTELS: 0.05,
